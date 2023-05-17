@@ -32,14 +32,14 @@ describe('ProductController', () => {
   });
 
   describe('FindAll', () => {
-    it('should return empty array when dont have products', async () => {
+    it('should return empty array when dont have products', () => {
       const result = [];
       jest.spyOn(productService, 'findAll').mockImplementation(() => result);
 
-      expect(await productController.FindAll().length).toBe(0);
+      expect(productController.FindAll().length).toBe(0);
     });
 
-    it('should return array of products', async () => {
+    it('should return array of products', () => {
       const result: Product[] = [
         {
           id: 1,
@@ -67,15 +67,15 @@ describe('ProductController', () => {
   });
 
   describe('FindOne', () => {
-    it("Should return not found when don't found", async () => {
+    it("Should return not found when don't found", () => {
       try {
-        await productController.FindOne(100);
+        productController.FindOne(100);
       } catch (e) {
         expect(e).toBeInstanceOf(NotFoundException);
         expect(e.message).toBe('Produto não foi encontrado');
       }
     });
-    it('Should return a product', async () => {
+    it('Should return a product', () => {
       const result: Product = {
         id: 1,
         title: 'Produto 1',
