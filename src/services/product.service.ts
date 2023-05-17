@@ -59,8 +59,6 @@ export class ProductService {
       ...updateProductDto,
     };
 
-    console.log(updateProductDto);
-    console.log(updatedProduct);
     const newArr = this.products.filter((i) => i.id !== Number(id));
 
     newArr.push(updatedProduct);

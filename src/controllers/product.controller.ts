@@ -7,10 +7,10 @@ import {
   Post,
   Put,
 } from '@nestjs/common';
-import { CreateProductDto } from 'src/dto/createProduct';
-import { UpdateProductDto } from 'src/dto/updateProductDto';
-import { Product } from 'src/entities/Product';
-import { ProductService } from 'src/services/product.service';
+import { CreateProductDto } from '../dto/createProduct';
+import { UpdateProductDto } from '../dto/updateProductDto';
+import { Product } from '../entities/Product';
+import { ProductService } from '../services/product.service';
 
 @Controller('products')
 export class ProductController {
