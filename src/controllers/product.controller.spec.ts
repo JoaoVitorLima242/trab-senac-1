@@ -4,6 +4,7 @@ import { ProductController } from './product.controller';
 import { ProductService } from '../services/product.service';
 import { Product } from '../entities/Product';
 import { UpdateProductDto } from 'src/dto/updateProductDto';
+import { CreateProductDto } from 'src/dto/createProduct';
 
 const updateDto: UpdateProductDto = {
   category: 'food',
@@ -11,7 +12,7 @@ const updateDto: UpdateProductDto = {
   price: 10.0,
 };
 
-const createDto: UpdateProductDto = {
+const createDto: CreateProductDto = {
   category: 'food',
   title: 'Pao de queijo',
   price: 10.0,
