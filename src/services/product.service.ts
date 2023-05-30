@@ -5,7 +5,14 @@ import { Product } from 'src/entities/Product';
 
 @Injectable()
 export class ProductService {
-  private products: Product[] = [];
+  private products: Product[] = [
+    {
+      id: Math.ceil(Math.random() * 1000),
+      title: 'Computador',
+      price: 1000.0,
+      category: 'Eletronico',
+    },
+  ];
 
   createProduct(createCourseDto: CreateProductDto): string {
     const id = Math.ceil(Math.random() * 1000);
