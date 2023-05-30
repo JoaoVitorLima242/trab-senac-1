@@ -1,4 +1,4 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { Injectable, Logger, NotFoundException } from '@nestjs/common';
 import { CreateProductDto } from 'src/dto/createProduct';
 import { UpdateProductDto } from 'src/dto/updateProductDto';
 import { Product } from 'src/entities/Product';
@@ -17,10 +17,14 @@ export class ProductService {
   createProduct(createCourseDto: CreateProductDto): string {
     const id = Math.ceil(Math.random() * 1000);
 
-    this.products.push({
+    const newProduct: Product = {
       id,
       ...createCourseDto,
-    });
+    };
+
+    this.products.push(newProduct);
+
+    Logger.log(newProduct);
 
     return 'Produto criado com suceso!';
   }
